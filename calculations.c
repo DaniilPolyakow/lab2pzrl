@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include "calculations.h"
 
-void summary()
+int summary(int n1, int n2)
 {
-
+	return n1 + n2;
 }
-void multiplication()
+int multiplication(int n1, int n2)
 {
-
+	return n1 * n2;
 }
-void substraction()
+int substraction(int n1, int n2)
 {
-
+	return n1 - n2;
 }
 void percentage()
 {
@@ -30,12 +30,16 @@ void sex()
 {
 
 }
+int tilda(const int n)
+{
+	return -(n + 1);	
+}
 int typeofn(char * n)
 {
-	/*
-	printf("%s\n", n);
-	printf("%c\n", n[0]);
-	*/
+	if (n[0] == '-')
+	{
+		n = n + 1;
+	}
 	if (n[0] == '0' && n[1] == 'x')
 	{
 		return 0;

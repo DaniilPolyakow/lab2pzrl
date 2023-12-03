@@ -1,11 +1,13 @@
 #ifndef CALCULATIONS_H
 #define CALCULATIONS_H
 
-void summary();
+int myInt;
 
-void multiplication();
+int summary(int n1, int n2);
 
-void substraction();
+int multiplication(int n1, int n2);
+
+int substraction(int n1, int n2);
 
 void percentage();
 
@@ -14,6 +16,8 @@ void ampersant();
 void palochka();
 
 void sex();
+
+int tilda(int n);
 
 int typeofn(char * n);
 
