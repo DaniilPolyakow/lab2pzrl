@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+#include <string.h>
+
 #include "calculations.h"
 
 int summary(int n1, int n2)
@@ -14,21 +17,21 @@ int substraction(int n1, int n2)
 {
 	return n1 - n2;
 }
-void percentage()
+int percentage(int n1, int n2)
 {
-
+	return n1 % n2;
 }
-void ampersant()
+int ampersant(int n1, int n2)
 {
-
+	return n1 & n2;
 }
-void palochka()
+int sex(int n1, int n2)
 {
-
+	return n1 ^ n2;
 }
-void sex()
+int palochka(int n1, int n2)
 {
-
+	return n1 | n2;
 }
 int tilda(const int n)
 {

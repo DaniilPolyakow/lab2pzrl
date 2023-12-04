@@ -9,13 +9,13 @@ int multiplication(int n1, int n2);
 
 int substraction(int n1, int n2);
 
-void percentage();
+int percentage(int n1, int n2);
 
-void ampersant();
+int ampersant(int n1, int n2);
 
-void palochka();
+int palochka(int n1, int n2);
 
-void sex();
+int sex(int n1, int n2);
 
 int tilda(int n);
 
