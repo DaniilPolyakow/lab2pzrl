@@ -7,17 +7,15 @@
 int bintodec(const char * n)
 {
 	int sum = 0;
-//	printf("%s %i\n", n, strlen(n));
 	for (int i = 0; i < strlen(n) - 1; i++)
 	{
 		if (n[i] == '1')
 		{
-			sum += pow(2, strlen(n) - i - 2);// было -2 
+			sum += pow(2, strlen(n) - i - 2);
 		}
 	}
 	if (n[0] == '-')
 	{
-	//	printf("%i\n", -sum);
 		return -sum;
 	}	
 	return sum;
@@ -56,16 +54,7 @@ char* dectobin(int n)
 	{
 		binary[indexx] = '\0';
 	}
-	//printf("%s\n", binary);
 	int start = 0;
-	//if (flag == 1)
-	//{
-	//	int end = indexx - 1;
-	//}
-	//else
-	//{
-	//	int end = indexx;
-	//}
 	int end = indexx - 1;
 	while (start < end)
 	{
@@ -75,7 +64,6 @@ char* dectobin(int n)
 		start++;
 		end--;
 	}
-	//printf("%s\n", binary);
 	return binary;
 }
 

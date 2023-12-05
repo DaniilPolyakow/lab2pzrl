@@ -10,14 +10,14 @@
 
 void main()
 {
-	char * input = NULL;
+	char* input = NULL;
 	size_t len = 0;
-	char * num1 = NULL;
-	char * num2 = NULL;
-	char * operator = NULL;
-	char * hex;
-	char * oct;
-	char * bin;
+	char* num1 = NULL;
+	char* num2 = NULL;
+	char* operator = NULL;
+	char* hex;
+	char* oct;
+	char* bin;
 	getline(&input, &len, stdin);
 	if (strchr(input, '~') != NULL)
 	{
@@ -31,7 +31,7 @@ void main()
 		else if (typeofn(num1) == 1)
 		{
 			oct = dectooct(tilda(octtodec(num1)));
-			printf("%s \t (%i) \t %i \n", oct, tilda(octtodec(num1)), octtodec(num1));
+			printf("%s \t (%i)\n", oct, tilda(octtodec(num1)));
 			free(oct);
 		}
 		else
@@ -43,14 +43,8 @@ void main()
 		free(input);
 		exit(0);
 	}
+
 	char sep[] = " ";
-
-	//num1 = strdup(strtok(input, sep));
-	//operator = strdup(strtok(NULL, sep));
-	//num2 = strdup(strtok(NULL, sep));
-	//printf("%s %s %s\n", num1, operator, num2);
-	
-
 	char num1_buffer[100];
 	char op_buff[2];
 	char num2_buffer[100];
@@ -58,56 +52,29 @@ void main()
 	num1 = strdup(num1_buffer);
 	operator = strdup(op_buff);
 	num2 = strdup(num2_buffer);
-	//printf("%i %i", strlen(num1), strlen(num2));
-	//exit(0);
-	//printf("%s %s %s\n", num1, num2, operator);
-	//printf("%i %i\n", strlen(num1), strlen(num2));
-
-
 	size_t len2 = strlen(num1);
 	size_t len3 = strlen(num2);
-	//printf("%i\n", len2);
 	char* new_string = (char*)malloc(len2 + 2);
 	char* new_string2 = (char*)malloc(len3 + 2);
 	strcpy(new_string, num1);
 	strcpy(new_string2, num2);
-	//printf("%s     %i       %c %c %c %c\n",new_string,len2, new_string[0], new_string[1], new_string[2], new_string[3]);
 	new_string[len2] = '0';
 	new_string2[len3] = '0';
-	//printf("%s %c %c %c %c\n",new_string,new_string[0] , new_string[1], new_string[2], new_string[3]); 
 	new_string[len2 + 1] = '\0';
 	new_string2[len3 + 1] = '\0';
 	free(num1);
 	free(num2);
 	num1 = new_string;
 	num2 = new_string2;
-	//printf("%i %i\n", strlen(num1), strlen(num2));
-	//printf("%s %s\n", num1, num2); 
 	
-	/*
-	//printf("%i\n###############\n", len2);
-	//printf("%s %s\n", num1, num2);
-	*/
-
-
-/*	
-	char * istr = strtok(input, sep);
-	num1 = istr; 
-	istr = strtok(NULL, sep);
-	operator = istr;
-	istr = strtok(NULL, sep);
-	num2 = istr;
-	//printf("%s	%s\n", is num1);
-	memmove(num1 - 1, num1, strlen(num1));
-	num1[strlen(num1) - 1] = '0';
-	num1 = num1 - 1;
-*/
-
-
 	if (typeofn(num1) != typeofn(num2))
 	{
+		printf("num1 = %i num2 = %i // (2 - двоичное, 1 - восьмеричное, 0 - шестандцетеричное\n", typeofn(num1), typeofn(num2));
 		printf("TYPE ERROR\n");
-		//free(input);
+		free(input);
+		free(num1);
+		free(num2);
+		free(operator);
 		exit(1);
 	}
 	if (*operator == '+')
@@ -115,8 +82,7 @@ void main()
 		switch(typeofn(num1))
 		{
 			case 0:
-				hex = dectohex(summary(hextodec(num1),hextodec(num2)));
-			////int dec = 
+				hex = dectohex(summary(hextodec(num1),hextodec(num2))); 
 				printf("%s \t (%i)\n", hex, summary(hextodec(num1),hextodec(num2)));
 				free(hex);
 				break;
@@ -126,13 +92,11 @@ void main()
 				free(oct);
 				break;
 			case 2:
-				//printf("%s %s %i\n", num1, num2,bintodec(num2)); 
 				bin = dectobin(summary(bintodec(num1),bintodec(num2)));
 				printf("%s \t (%i)\n", bin, summary(bintodec(num1),bintodec(num2)));
 				free(bin);
 				break;
 		}
-		//free(input);
 	}
 	else if (*operator == '*')
 	{
@@ -286,12 +250,9 @@ void main()
 			printf("ERROR\n");
 		}
 	}
-	//printf("%p\n", input)
 	free(input);
 	free(num1);
 	free(num2);
 	free(operator);
-	free(new_string);
 	exit(0);
-
 }
