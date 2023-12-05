@@ -35,6 +35,8 @@ int palochka(int n1, int n2)
 }
 int tilda(const int n)
 {
+	if (n == 0)
+		return 0;
 	return -(n + 1);	
 }
 int typeofn(char * n)

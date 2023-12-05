@@ -7,11 +7,12 @@
 int bintodec(const char * n)
 {
 	int sum = 0;
-	for (int i = 0; i < strlen(n)-1; i++)
+//	printf("%s %i\n", n, strlen(n));
+	for (int i = 0; i < strlen(n) - 1; i++)
 	{
 		if (n[i] == '1')
 		{
-			sum += pow(2, strlen(n) - i - 2); 
+			sum += pow(2, strlen(n) - i - 2);// было -2 
 		}
 	}
 	if (n[0] == '-')

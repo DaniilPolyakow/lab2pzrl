@@ -7,11 +7,11 @@
 int octtodec(const char * n)
 {
 	int sum = 0;
-	for (int i = 0; i < strlen(n) - 1; i++)
+	for (int i = 0; i < strlen(n) - 1; i++) // -1
 	{       if (n[i] != '-')	
 		{
-			sum += (int)(n[i] - '0') * pow(8, strlen(n) - i - 2);
-			//printf("%i\n", (int)(n[i] - '0'));
+			sum += (int)(n[i] - '0') * pow(8, strlen(n) - i - 2); // -2
+			//printf("%i %i\n",  strlen(n), strlen(n) - i - 2);
 		}
 	}
 	//printf("%i\n", sum);
