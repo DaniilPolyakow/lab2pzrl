@@ -69,8 +69,7 @@ void main()
 	
 	if (typeofn(num1) != typeofn(num2))
 	{
-		printf("num1 = %i num2 = %i // (2 - двоичное, 1 - восьмеричное, 0 - шестандцетеричное\n", typeofn(num1), typeofn(num2));
-		printf("TYPE ERROR\n");
+		printf("ERROR\n");
 		free(input);
 		free(num1);
 		free(num2);
