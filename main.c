@@ -60,8 +60,6 @@ void main()
 	strcpy(new_string2, num2);
 	new_string[len2] = '0';
 	new_string2[len3] = '0';
-	new_string[len2 + 1] = '\0';
-	new_string2[len3 + 1] = '\0';
 	free(num1);
 	free(num2);
 	num1 = new_string;
@@ -69,7 +67,7 @@ void main()
 	
 	if (typeofn(num1) != typeofn(num2))
 	{
-		printf("ERROR\n");
+		printf("input or type ERROR\n");
 		free(input);
 		free(num1);
 		free(num2);
