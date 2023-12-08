@@ -8,7 +8,8 @@ int octtodec(const char * n)
 {
 	int sum = 0;
 	for (int i = 0; i < strlen(n) - 1; i++)
-	{       if (n[i] != '-')	
+	{       
+		if (n[i] != '-')	
 		{
 			sum += (int)(n[i] - '0') * pow(8, strlen(n) - i - 2); 
 		}

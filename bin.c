@@ -13,6 +13,11 @@ int bintodec(const char * n)
 		{
 			sum += pow(2, strlen(n) - i - 2);
 		}
+		else if (n[i] != '0' && n[i] != '1')
+		{
+			printf("input or type ERROR\n");
+			exit(1);
+		}
 	}
 	if (n[0] == '-')
 	{
