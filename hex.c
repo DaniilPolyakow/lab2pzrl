@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <ctype.h>
 #include "oct.h"
 
 int hextodec(char * n)
@@ -43,8 +44,16 @@ int hextodec(char * n)
 			sum += 15 * pow(16, strlen(n) - i - 2);
 		}
 		else
-		{	
-			sum += (int)(n[i] - '0') * pow(16, strlen(n) - i - 2);
+		{
+			if (isdigit(n[i]) != 0)
+			{	
+				sum += (int)(n[i] - '0') * pow(16, strlen(n) - i - 2);
+			}
+			else
+			{
+				printf("ERROR\n");
+				exit(1);
+			}
 		}
 	}
 	if (n[0] == '-')

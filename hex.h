@@ -2,7 +2,7 @@
 #define HEX_H
 
 char* hexal;
-char temp;
+//char temp;
 int start, end, sum, indexx, lenght, i;
 
 int hextodec(char * n);

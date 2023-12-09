@@ -38,7 +38,10 @@ void main()
 		{
 			bin = dectobin(tilda(bintodec(num1)));
 			printf("%s \t (%i)\n", bin, tilda(bintodec(num1)));
-			free(bin);
+			if (bin[0] != '0')
+			{
+				free(bin);
+			}
 		}
 		free(input);
 		exit(0);
@@ -91,8 +94,11 @@ void main()
 			case 2:
 				bin = dectobin(summary(bintodec(num1),bintodec(num2)));
 				printf("%s \t (%i)\n", bin, summary(bintodec(num1),bintodec(num2)));
-				free(bin);
-				break;
+				if (bin[0] != '0')
+				{
+					free(bin);
+					break;
+				}
 		}
 	}
 	else if (*operator == '*')
@@ -114,9 +120,11 @@ void main()
 			case 2:
 				bin = dectobin(multiplication(bintodec(num1),bintodec(num2)));
 				printf("%s \t (%i)\n", bin, multiplication(bintodec(num1),bintodec(num2)));
-				free(bin);
-				break;
-				
+				if (bin[0] != '0')
+				{
+					free(bin);
+					break;
+				}
 		}
 	}	
 	else if (*operator == '-')
@@ -138,8 +146,11 @@ void main()
 			case 2:
 				bin = dectobin(substraction(bintodec(num1),bintodec(num2)));
 				printf("%s \t (%i)\n", bin, substraction(bintodec(num1),bintodec(num2)));
-				free(bin);
-				break;
+				if (bin[0] != '0')
+				{
+					free(bin);
+					break;
+				}
 		}
 	}
 	else if (*operator == '%')
@@ -159,8 +170,11 @@ void main()
 			case 2:
 				bin = dectobin(percentage(bintodec(num1),bintodec(num2)));
 				printf("%s \t (%i)\n", bin, percentage(bintodec(num1),bintodec(num2)));
-				free(bin);
-				break;
+				if (bin[0] != '0')
+				{
+					free(bin);
+					break;
+				}
 		}
 	}
 	else if (*operator == '&')
@@ -182,7 +196,13 @@ void main()
 				case 2:
 					bin = dectobin(ampersant(bintodec(num1),bintodec(num2)));
 					printf("%s \t (%i)\n", bin, ampersant(bintodec(num1),bintodec(num2)));
-					free(bin);
+					if (strlen(num1) == strlen(num2))
+					{
+						if (bin[0] != '0')
+						{
+							free(bin);
+						}
+					}
 					break;
 			}
 		}	
@@ -210,7 +230,10 @@ void main()
 				case 2:
 					bin = dectobin(palochka(bintodec(num1),bintodec(num2)));
 					printf("%s \t (%i)\n", bin, palochka(bintodec(num1),bintodec(num2)));
-					free(bin);
+					if (bin[0] != '0')
+					{
+						free(bin);
+					}
 					break;
 			}
 		}	
@@ -238,7 +261,10 @@ void main()
 				case 2:
 					bin = dectobin(sex(bintodec(num1),bintodec(num2)));
 					printf("%s \t (%i)\n", bin, sex(bintodec(num1),bintodec(num2)));
-					free(bin);
+					if (bin[0] != '0')
+					{
+						free(bin);
+					}
 					break;
 			}
 		}	
@@ -246,6 +272,10 @@ void main()
 		{
 			printf("ERROR\n");
 		}
+	}
+	else
+	{
+		printf("ERROR\n");
 	}
 	free(input);
 	free(num1);

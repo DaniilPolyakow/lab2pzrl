@@ -57,6 +57,10 @@ int typeofn(char * n)
 	}
 	else if (n[0] == '0')
 	{
+		if (strlen(n) == 2)
+		{
+			return 2;
+		}
 		return 1;
 	}
 	else

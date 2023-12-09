@@ -7,13 +7,17 @@
 int bintodec(const char * n)
 {
 	int sum = 0;
+	if (strlen(n) == 2 && n[0] == '0')
+	{
+		return 0;
+	}
 	for (int i = 0; i < strlen(n) - 1; i++)
 	{
 		if (n[i] == '1')
 		{
 			sum += pow(2, strlen(n) - i - 2);
 		}
-		else if (n[i] != '0' && n[i] != '1')
+		else if (n[i] != '1' && n[i] != '0')
 		{
 			printf("input or type ERROR\n");
 			exit(1);
