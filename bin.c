@@ -11,7 +11,12 @@ int bintodec(const char * n)
 	{
 		return 0;
 	}
-	for (int i = 0; i < strlen(n) - 1; i++)
+	int i = 0;
+	if (n[0] == '-')
+	{
+		i += 1;
+	}
+	for (i; i < strlen(n) - 1; i++)
 	{
 		if (n[i] == '1')
 		{
