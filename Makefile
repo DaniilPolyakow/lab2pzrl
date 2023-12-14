@@ -2,19 +2,19 @@
 
 all: launch
 
-launch: main calculations bin oct hex
-	gcc main calculations bin oct hex -lm -o launch
-main: main.c 
-	gcc main.c -c -o main
-calculations: calculations.c
-	gcc calculations.c -c -o calculations
-bin: bin.c
-	gcc bin.c -c -lm -o bin
-oct: oct.c
-	gcc oct.c -c -lm -o oct
-hex: hex.c
-	gcc hex.c -c -lm -o hex
+launch: main.o calculations.o bin.o oct.o hex.o
+	gcc main.o calculations.o bin.o oct.o hex.o -o launch -lm
+main.o: main.c 
+	gcc -c main.c
+calculations.o: calculations.c
+	gcc -c calculations.c
+bin.o: bin.c
+	gcc -c bin.c 
+oct.o: oct.c
+	gcc -c oct.c
+hex.o: hex.c
+	gcc -c hex.c
 run: launch
 	./launch
 clean:
-	rm -rf main calculations hex oct bin launch
+	rm -rf *.o launch
