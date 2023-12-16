@@ -46,8 +46,6 @@ void main()
 		free(input);
 		exit(0);
 	}
-
-	char sep[] = " ";
 	char num1_buffer[100];
 	char op_buff[2];
 	char num2_buffer[100];
@@ -67,7 +65,6 @@ void main()
 	free(num2);
 	num1 = new_string;
 	num2 = new_string2;
-	
 	if (typeofn(num1) != typeofn(num2))
 	{
 		printf("input or type ERROR\n");
@@ -75,7 +72,7 @@ void main()
 		free(num1);
 		free(num2);
 		free(operator);
-		exit(1);
+		exit(0);
 	}
 	if (*operator == '+')
 	{
