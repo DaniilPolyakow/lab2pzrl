@@ -1,12 +1,14 @@
 .PHONY: all clean run
 
+VAR = calculations.o
+
 all: launch
 
-launch: main.o calculations.o bin.o oct.o hex.o
-	gcc main.o calculations.o bin.o oct.o hex.o -o launch -lm -Wall -Wextra
+launch: main.o $(VAR) bin.o oct.o hex.o
+	gcc main.o $(VAR) bin.o oct.o hex.o -o launch -lm -Wall -Wextra
 main.o: main.c 
 	gcc -c main.c
-calculations.o: calculations.c
+$(VAR): calculations.c
 	gcc -c calculations.c
 bin.o: bin.c
 	gcc -c bin.c 
