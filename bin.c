@@ -25,7 +25,7 @@ int bintodec(const char * n)
 		else if (n[i] != '1' && n[i] != '0')
 		{
 			printf("input or type ERROR\n");
-			exit(1);
+			exit(0);
 		}
 	}
 	if (n[0] == '-')
