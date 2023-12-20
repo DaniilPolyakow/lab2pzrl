@@ -3,7 +3,7 @@
 all: launch
 
 launch: main.o calculations.o bin.o oct.o hex.o
-	gcc main.o calculations.o bin.o oct.o hex.o -o launch -lm
+	gcc main.o calculations.o bin.o oct.o hex.o -o launch -lm -Wall -Wextra
 main.o: main.c 
 	gcc -c main.c
 calculations.o: calculations.c
