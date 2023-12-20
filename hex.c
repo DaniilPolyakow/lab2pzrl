@@ -51,7 +51,7 @@ int hextodec(char * n)
 			else
 			{
 				printf("ERROR\n");
-				exit(1);
+				exit(0);
 			}
 		}
 	}
