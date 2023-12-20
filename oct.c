@@ -21,7 +21,7 @@ int octtodec(const char * n)
 		else
 		{
 			printf("ERROR 123123\n");
-			exit(1);
+			exit(0);
 		}
 	}
 	if (n[0] == '-')
