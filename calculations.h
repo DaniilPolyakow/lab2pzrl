@@ -1,8 +1,6 @@
 #ifndef CALCULATIONS_H
 #define CALCULATIONS_H
 
-int myInt;
-
 int summary(int n1, int n2);
 
 int multiplication(int n1, int n2);
